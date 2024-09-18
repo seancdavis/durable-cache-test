@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@netlify/edge-functions": "^2.10.0"
+    "@netlify/edge-functions": "^2.10.0",
+    "@netlify/functions": "^2.8.1"
   }
 }

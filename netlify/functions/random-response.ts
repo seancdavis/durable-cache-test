@@ -1,12 +1,11 @@
-import type { Config, Context } from "@netlify/edge-functions";
-import { html } from "https://deno.land/x/html@v1.2.0/mod.ts";
+import { Config, Context } from "@netlify/functions";
 
 export default async function handler(request: Request, context: Context) {
   const url = new URL(request.url);
   const cacheKey = "CACHE_" + url.pathname.replace(/\/+/g, "");
   const randomString = Math.random().toString(36).substring(7);
 
-  const htmlResponse = html`
+  const htmlResponse = `
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -34,5 +33,5 @@ export default async function handler(request: Request, context: Context) {
 }
 
 export const config: Config = {
-  path: "/ef/*",
+  path: "/f/*",
 };
