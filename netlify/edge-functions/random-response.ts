@@ -22,13 +22,13 @@ export default async function handler(request: Request, context: Context) {
 
   return new Response(htmlResponse, {
     headers: {
-      "content-type": "text/html; charset=utf-8",
+      "Content-Type": "text/html; charset=utf-8",
       // The browser should always check freshness
-      "cache-control": "public, max-age=0, must-revalidate",
+      "Cache-Control": "public, max-age=0, must-revalidate",
       // The CDN should cache for a year, but revalidate if the cache tag changes
-      "netlify-cdn-cache-control": "public, durable, s-maxage=31536000",
+      "Netlify-CDN-Cache-Control": "public, durable, s-maxage=31536000",
       // Tag the page with the user ID
-      "netlify-cache-tag": pathname,
+      "Netlify-Cache-Tag": pathname,
     },
   });
 }
